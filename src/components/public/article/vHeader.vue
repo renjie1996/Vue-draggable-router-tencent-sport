@@ -1,33 +1,35 @@
 <template lang="html">
-<div class="article">
-  <v-header></v-header>
-  <v-article></v-article>
-  <!--<video class="video" src="http://117.41.241.11/sports.tc.qq.com/c0023f88cqn.p401.1.mp4?sdtfrom=v1010&guid=903fa06222168e65ab86b0144db988b2&vkey=A11545883178B5737CA2655516DE6E9784445E9A04FC60FBC25956C0A09BC529637624A616D50FECFF6D8998BAFE0354728A77667A0355BE918D5757A13480C5BEF469212CCE9DEC88DD4099EAAA07F98AD41A1DF7E80D964869916E1284A76FFC12DE4019CE4CE91E1BBC3805B42BD8" width="100%" controls>
-  </video>-->
-</div>
+  <div class="head">
+    <div class="clearfix">
+      <div class="head__main"><span>资讯详情</span></div>
+      <div class="head__left">
+        <router-link to="" v-on:click.native="goback" class="goback"></router-link>
+      </div>
+      <div class="head__right">
+      </div>
+    </div>
+  </div>
 </template>
+
 <script>
-import vHeader from '../../components/public/article/vHeader'
-import vArticle from '../../components/public/article/vArticle'
 export default {
-  components: {
-    vHeader,
-    vArticle
+  methods: {
+    // goback返回
+    goback () {
+      console.log(1)
+      window.history.go(-1)
+    }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-.video {
-  height 5.6888rem
-  width 10rem
-  margin-top 1.2667rem
-}
 .head
   position fixed
   top 0
   height 1.32666667rem
   width 100%
+  z-index 999
   background-color #fff
   background-color #3466f6
   &:after
@@ -98,5 +100,5 @@ export default {
       font-size .43666667rem
       font-weight 400
       line-height 1.32666667rem     
-      height 1.32666667rem   
+      height 1.32666667rem 
 </style>
