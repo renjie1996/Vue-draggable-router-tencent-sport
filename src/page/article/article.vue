@@ -1,7 +1,7 @@
 <template lang="html">
 <div class="article">
   <v-header></v-header>
-  <v-article></v-article>
+  <v-article :articleIndex="articleIndex"></v-article>
   <!--<video class="video" src="http://117.41.241.11/sports.tc.qq.com/c0023f88cqn.p401.1.mp4?sdtfrom=v1010&guid=903fa06222168e65ab86b0144db988b2&vkey=A11545883178B5737CA2655516DE6E9784445E9A04FC60FBC25956C0A09BC529637624A616D50FECFF6D8998BAFE0354728A77667A0355BE918D5757A13480C5BEF469212CCE9DEC88DD4099EAAA07F98AD41A1DF7E80D964869916E1284A76FFC12DE4019CE4CE91E1BBC3805B42BD8" width="100%" controls>
   </video>-->
 </div>
@@ -13,6 +13,21 @@ export default {
   components: {
     vHeader,
     vArticle
+  },
+  data () {
+    return {
+      articleIndex: {}
+    }
+  },
+  mounted () {
+    //  console.log(this.$route.params.id)
+     this.axios.get('https://www.easy-mock.com/mock/592d882391470c0ac1feb75e/sposts/main-article' + this.$route.params.id)
+      .then((response) => {
+        this.articleIndex = response.data
+      })
+      .catch((error) => {
+        console.log(error) 
+      })
   }
 }
 </script>

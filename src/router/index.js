@@ -22,7 +22,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/article',
+      path: '/article/:id',
       component: Article
     },
     {

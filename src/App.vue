@@ -20,5 +20,10 @@ export default {
   -moz-osx-font-smoothing grayscale
 a 
   text-decoration none
+image[lazy=loading] 
+  width 40px
+  height 300px
+  margin auto
+
 
 </style>

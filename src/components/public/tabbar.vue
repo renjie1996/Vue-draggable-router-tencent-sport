@@ -3,22 +3,26 @@
     <router-link to="/competition/recommend" class="tabbar__item" id="tabbar__item1" @click.native="setIndex(1)">
       <img v-if="selected != 1" src="../../assets/img/competition.png" alt="">
       <img v-if="selected === 1" src="../../assets/img/competition--active.png" alt="">
-      <p>赛事</p>
+      <p v-if="selected != 1" class="icon">赛事</p>
+      <p v-if="selected === 1" class="icon__active">赛事</p>
     </router-link>
     <router-link to="/community/hotpost" class="tabbar__item" id="tabbar__item2" @click.native="setIndex(2)">
       <img v-if="selected != 2" src="../../assets/img/community.png" alt="">
       <img v-if="selected === 2" src="../../assets/img/community--active.png" alt="">
-      <p>社区</p>
+      <p v-if="selected != 2" class="icon">社区</p>
+      <p v-if="selected === 2" class="icon__active">社区</p>
     </router-link>
     <router-link to="/agenda/focus" class="tabbar__item" id="tabbar__item3" @click.native="setIndex(3)">
       <img v-if="selected != 3" src="../../assets/img/agenda.png" alt="">
       <img v-if="selected === 3" src="../../assets/img/agenda--active.png" alt="">
-      <p>赛程</p>
+      <p v-if="selected != 3" class="icon">赛程</p>
+      <p v-if="selected === 3" class="icon__active">赛程</p>
     </router-link>
     <router-link to="/mine" class="tabbar__item" id="tabbar__item5" @click.native="setIndex(5)">
       <img v-if="selected != 5" src="../../assets/img/mine.png" alt="">
       <img v-if="selected === 5" src="../../assets/img/mine--active.png" alt="">
-      <p>我的</p>
+      <p v-if="selected != 5" class="icon">我的</p>
+      <p v-if="selected === 5" class="icon__active">我的</p>
     </router-link>
   </div>
 </template>
@@ -74,13 +78,14 @@
         margin-bottom .1rem
         width .66rem
         height .66rem
-      p
+      .icon
         margin 0 auto
         font-size 12px
         color #d2d2d2
+      .icon__active
+        color #3466f6
       &.router-link-active 
         p 
           color #3466f6
-
 </style>
 

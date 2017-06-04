@@ -10,12 +10,11 @@
         <div class="headline" :style="{backgroundImage: 'url(' + imgUrl + ')'}">
           <p class="msg">宇宙勇面前，詹姆斯能否卫冕？</p>
         </div>
-        <competition-nav class="competition-nav"></competition-nav>
+        <competition-nav :games="games" class="competition-nav"></competition-nav>
         <div class="new-list page-infinite-list" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading" infinite-scroll-distance="50">
           <new-item class="new-item page-infinite-listitem" v-for="newItem in newArr" :newItem="newItem"></new-item>
           <p v-show="loading" class="page-infinite-loading">
             <mt-spinner type="fading-circle"></mt-spinner>
-            加载中
           </p>
         </div>
       </mt-loadmore>
@@ -31,6 +30,7 @@ export default {
       .then((response) => {
         // console.log(response.data.newArr[0][0])
         this.newArr = response.data.newArr[0]
+        this.games = response.data.games
         // console.log(this.newArr)
       })
       .catch((error) => {
@@ -41,6 +41,7 @@ export default {
     return {
       // 新闻数据
       newArr: [],
+      games: [],
       // u请求url序号
       getNum: 0,
       imgUrl: 'http://xurenjie.cn:3000/img/img/James.jpeg',
@@ -108,9 +109,12 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+
 .page-infinite-loading
   margin-left 4.6rem
   margin-top .4rem
+  font-size .2rem
+  color #ddd
 .recommend
   width 100%
   height 20rem

@@ -9,7 +9,6 @@
       <community-article v-for="article in articleArr" :article="article" class="community-article page-infinite-listitem"></community-article>
       <p v-show="loading" class="page-infinite-loading">
         <mt-spinner type="fading-circle"></mt-spinner>
-        加载中
       </p>
     </div>
   </div>
@@ -70,7 +69,7 @@ export default {
 <style lang="stylus" scoped>
 .page-infinite-loading
   position absolute
-  bottom 1.4rem
+  bottom 1.6rem
   margin-left 4.6rem
 .hotpost
    padding-bottom 3rem

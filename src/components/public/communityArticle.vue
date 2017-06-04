@@ -8,8 +8,8 @@
       {{article.desc}}
     </p>
     <div class="content">
-      <img class="content__img" v-if="article.imgArr.length <= 1" v-for="img in article.imgArr" :src='img' alt="">
-      <img class="content__img--double" v-if="article.imgArr.length > 1" v-for="img in article.imgArr" :src='img' alt="">
+      <img class="content__img" v-if="article.imgArr.length <= 1" v-for="img in article.imgArr" v-lazy="img" alt="">
+      <img class="content__img--double" v-if="article.imgArr.length > 1" v-for="img in article.imgArr" v-lazy="img" alt="">
     </div>
     <footer class="footer">
       <div class="article__author--left">

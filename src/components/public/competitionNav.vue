@@ -1,36 +1,19 @@
 <template lang="html">
   <div class="compete-nav">
-    <router-link to="/agenda/all" class="card">
-      <div class="header">NBA季后赛</div>
+    <router-link v-for="game in games" :to="game.url" class="card">
+      <div class="header">{{game.title}}</div>
       <div class="content">
         <div class="content-left">
-          <img src="http://xurenjie.cn:3000/img/img/warriors.png" alt="">
-          <p>勇士</p>
+          <img v-lazy="game.playerImg1" alt="">
+          <p>{{game.player1}}</p>
         </div>
         <div class="content-middle">
-          <p class="date">6月2日</p>
+          <p class="date">{{game.date}}</p>
           <p class="order">预约</p>
         </div>
         <div class="content-right">
-          <img src="http://xurenjie.cn:3000/img/img/cavaliers.png" alt="">
-          <p>骑士</p>
-        </div>
-      </div>
-    </router-link>
-    <router-link to="/agenda/all" class="card">
-      <div class="header">NBA季后赛</div>
-      <div class="content">
-        <div class="content-left">
-          <img src="http://xurenjie.cn:3000/img/img/warriors.png" alt="">
-          <p>勇士</p>
-        </div>
-        <div class="content-middle">
-          <p class="date">6月5日</p>
-          <p class="order">预约</p>
-        </div>
-        <div class="content-right">
-          <img src="http://xurenjie.cn:3000/img/img/cavaliers.png" alt="">
-          <p>骑士</p>
+          <img v-lazy="game.playerImg2" alt="">
+          <p>{{game.player2}}</p>
         </div>
       </div>
     </router-link>
@@ -41,6 +24,7 @@
 </template>
 <script>
 export default {
+  props: ['games']
 }
 </script>
 

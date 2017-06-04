@@ -10,7 +10,7 @@
         </p>
       </div>
       <div class="item-right">
-        <img src="http://xurenjie.cn:3000/img/img/new1.jpg" alt="">
+        <img v-lazy="newItem.img" alt="">
       </div>
     </div>
   </router-link>
