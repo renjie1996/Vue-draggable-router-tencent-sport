@@ -5,7 +5,7 @@
       <p class="time">{{articleIndex.time}}</p>
     </header>
     <div class="video-group">
-      <video class="video" :src="articleIndex.video" width="100%" controls>
+      <video class="video" :src="articleIndex.video" width="100%" controls autoplay="autoplay">
       </video>
       <p class="video-desc">{{articleIndex.video_desc}}</p>
     </div>

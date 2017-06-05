@@ -1,5 +1,5 @@
 <template>
-<router-link to="/">
+<router-link :to="article.url">
   <div class="article">
     <header class="header">
       <h2>{{article.title}}</h2>

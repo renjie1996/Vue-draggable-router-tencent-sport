@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="head">
     <div class="clearfix">
-      <div class="head__main"><span>资讯详情</span></div>
+      <div class="head__main"><span><slot>资讯详情</slot></span></div>
       <div class="head__left">
         <router-link to="" v-on:click.native="goback" class="goback"></router-link>
       </div>

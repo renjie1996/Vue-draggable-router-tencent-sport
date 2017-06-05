@@ -1,6 +1,6 @@
 <template lang="html">
   <div>
-    <competition-nav class="competition-nav"></competition-nav>
+    <competition-nav :games="games" class="competition-nav"></competition-nav>
   </div>
 </template>
 <script>
@@ -8,6 +8,22 @@ import competitionNav from '../public/competitionNav'
 export default {
   components: {
     'competitionNav': competitionNav
+  },
+  mounted () {
+    this.axios.get('https://www.easy-mock.com/mock/592d882391470c0ac1feb75e/sposts/recommend')
+      .then((response) => {
+        // console.log(response.data.newArr[0][0])
+        this.games = response.data.games
+        // console.log(this.newArr)
+      })
+      .catch((error) => {
+        console.log(error) 
+      })
+  },
+  data () {
+    return {
+      games: []
+    }
   }
 }
 </script>

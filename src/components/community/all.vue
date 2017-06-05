@@ -4,7 +4,7 @@
     <div class="content">
       <div class="content-item" v-for="item in clubItems">
         <div class="item__left">
-          <img :src="item.img" alt="">
+          <img v-lazy="item.img" alt="">
         </div>
         <div class="item__center">
           <h3>{{item.name}}</h3>

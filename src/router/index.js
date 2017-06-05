@@ -6,6 +6,7 @@ import Agenda from '@/page/home/agenda'
 import Mine from '@/page/home/mine'
 import Index from '@/page/index.vue'
 import Article from '@/page/article/article'
+import ArticleVideo from '@/page/article/article-video'
 import Recommend from '@/components/tunnels/recommend'
 import Video from '@/components/tunnels/video'
 import NBA from '@/components/tunnels/nba'
@@ -21,6 +22,10 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/article-video/:id',
+      component: ArticleVideo
+    },
     {
       path: '/article/:id',
       component: Article
@@ -67,6 +72,10 @@ export default new Router({
           path: '/community/all',
           name: 'communityall',
           component: CommunityAll
+        }, {
+          path: '/community/article/:id',
+          component: Article,
+          redirect: '/article/:id'
         }]
       }, {
         path: '/agenda',

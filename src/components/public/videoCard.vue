@@ -1,51 +1,29 @@
 <template lang="html">
   <div class="card">
-    <router-link to="/">
+    <router-link :to="videoItem.url">
       <div class="card__header">
-        <div class="header__left">全景NBA-5月30日</div>
+        <div class="header__left">{{videoItem.title}}</div>
         <div class="header__right">往期回顾</div>
       </div>
       <div class="card__centent">
         <div class="main__new">
-          <div class="new__index" :style="{backgroundImage: 'url(' + imgUrl + ')'}">
-            <span class="duration">02:41</span>
+          <div class="new__index" :style="{backgroundImage: 'url(' + videoItem.img + ')'}">
+            <span class="duration">{{videoItem.time}}</span>
           </div>
           <div class="new__desc">
-            骑士勇士总决赛十佳球 欧文颜射詹皇追帽
+            {{videoItem.desc}}
           </div>
         </div>
         <ul class="small__new-list">
-          <li class="small__new-item">
-            <div class="new-item__index" :style="{backgroundImage: 'url(' + imgUrl + ')'}">
-              <div class="duration">02:41</div>
-            </div>
-            <div class="new-item__desc">
-              骑士勇士总决赛十佳球 欧文颜射詹皇追帽
-            </div>
-          </li>
-          <li class="small__new-item">
-            <div class="new-item__index" :style="{backgroundImage: 'url(' + imgUrl + ')'}">
-              <div class="duration">02:41</div>
-            </div>
-            <div class="new-item__desc">
-              骑士勇士总决赛十佳球 欧文颜射詹皇追帽
-            </div>
-          </li>
-          <li class="small__new-item">
-            <div class="new-item__index" :style="{backgroundImage: 'url(' + imgUrl + ')'}">
-              <div class="duration">02:41</div>
-            </div>
-            <div class="new-item__desc">
-              骑士勇士总决赛十佳球 欧文颜射詹皇追帽
-            </div>
-          </li>
-          <li class="small__new-item">
-            <div class="new-item__index" :style="{backgroundImage: 'url(' + imgUrl + ')'}">
-              <div class="duration">02:41</div>
-            </div>
-            <div class="new-item__desc">
-              骑士勇士总决赛十佳球 欧文颜射詹皇追帽
-            </div>
+          <li class="small__new-item" v-for="item in videoItem.more">
+            <router-link :to="item.url">
+              <div class="new-item__index" :style="{backgroundImage: 'url(' + item.img + ')'}">
+                <div class="duration">{{item.time}}</div>
+              </div>
+              <div class="new-item__desc">
+                {{item.desc}}
+              </div>
+            </router-link>
           </li>
         </ul>
       </div>
@@ -55,11 +33,10 @@
 
 <script>
 export default {
-  data () {
-    return {
-      imgUrl: 'http://xurenjie.cn:3000/img/img/new-item-1.jpeg'
-    }
-  }
+  mounted () {
+    // console.log(this.videoItem)
+  },
+  props: ['videoItem']
 }
 </script>
 
@@ -134,6 +111,7 @@ export default {
             width 100%
             height 2.666666667rem
             position relative
+            background-size cover
             .duration
               color #fff
               font-size .3rem
