@@ -1,5 +1,5 @@
 <template lang="html">
-  <div>我的</div>
+  <router-view></router-view>
 </template>
 <script>
 export default {

@@ -13,14 +13,6 @@
 import communityArticle from '../public/communityArticle'
 export default {
   mounted () {
-    this.axios.get('https://www.easy-mock.com/mock/592d882391470c0ac1feb75e/sposts/swiper')
-      .then((response) => {
-        // console.log(response.data.swiper)
-        this.swiperItems = response.data.swiper
-      })
-      .catch(function (error) {
-        console.log(error) 
-      })
       this.axios.get('https://www.easy-mock.com/mock/592d882391470c0ac1feb75e/sposts/article')
       .then((response) => {
         this.articleArr = response.data.articles
@@ -31,7 +23,6 @@ export default {
   },
   data () {
     return {
-      swiperItems: [],
       articleArr: [],
       list: [],
       loading: false,

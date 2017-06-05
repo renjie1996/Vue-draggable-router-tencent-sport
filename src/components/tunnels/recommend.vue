@@ -26,6 +26,12 @@ import newItem from '../public/newItem'
 export default {
   // 请求新闻数据
   mounted () {
+    if(sessionStorage.getItem('imgUrl')) {
+      this.imgUrl = sessionStorage.getItem('imgUrl')
+    } else {
+      this.imgUrl = 'http://xurenjie.cn:3000/img/img/James.jpeg'
+      sessionStorage.setItem('imgUrl', ['http://xurenjie.cn:3000/img/img/James.jpeg'])
+    } 
     this.axios.get('https://www.easy-mock.com/mock/592d882391470c0ac1feb75e/sposts/recommend')
       .then((response) => {
         // console.log(response.data.newArr[0][0])

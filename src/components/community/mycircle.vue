@@ -28,16 +28,22 @@
 <script>
 import communityArticle from '../public/communityArticle'
 export default {
-  mounted () {
-    this.axios.get('https://www.easy-mock.com/mock/592d882391470c0ac1feb75e/sposts/swiper')
+  mounted () { 
+    if(sessionStorage.getItem('swiper')) {
+      this.swiperItems = sessionStorage.getItem('swiper')
+    } else {
+      this.axios.get('https://www.easy-mock.com/mock/592d882391470c0ac1feb75e/sposts/swiper')
       .then((response) => {
         // console.log(response.data.swiper)
+        sessionStorage.setItem('swiper', response.data.swiper)
         this.swiperItems = response.data.swiper
       })
       .catch(function (error) {
         console.log(error) 
       })
-      this.axios.get('https://www.easy-mock.com/mock/592d882391470c0ac1feb75e/sposts/article')
+    }
+    
+    this.axios.get('https://www.easy-mock.com/mock/592d882391470c0ac1feb75e/sposts/article')
       .then((response) => {
         this.articleArr = response.data.articles
       })
