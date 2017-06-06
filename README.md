@@ -11,7 +11,7 @@
 ![](https://dn-mhke0kuv.qbox.me/cfe5be12a6941859d059.gif)
 
 # 描述
->前端部分
+前端部分
 * SPA单页应用，前后端分离，webpack build to dist
 * 移动设备兼容：使用flexible.js和rem处理兼容问题
 * 路由懒加载：Vue Router 处理路由，结合 Vue 的 异步组件 和 Webpack 的 code splitting feature 实现路由懒加载
@@ -22,11 +22,11 @@
 * 大图片、轮播图通过 sessionStorage 存储
 
 
->后端部分
+后端部分
 * mock模拟数据
 * express 做静态资源目录
 
->待更新的功能
+待更新的功能
 * 处理数据相关性，让圈子组件和文章组件对应显示
 * 改用 express 抛接口
 * 用 express + mongodb 保存用户状态
@@ -145,6 +145,7 @@ npm install vuedraggable --save
 ```
 
 构造拖拽区域
+
 ```
 <draggable v-model="subscribedArr" :move="onMove" :options="dragOptions"@start="isDragging=true" @end="isDragging=false">
     <transition-group>
@@ -155,12 +156,17 @@ npm install vuedraggable --save
 ## Vuex的使用
 
 需要注意：Action 类似于 mutation，不同在于：
+
 * Action 提交的是 mutation，而不是直接变更状态。
 * Action 可以包含任意异步操作。
 
+
+```
 > npm install
 
 > npm run dev
+
+```
 
 
 
