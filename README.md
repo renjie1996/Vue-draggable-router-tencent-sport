@@ -140,7 +140,8 @@ Events reporting any changes when full control is needed
 
 ![](https://dn-mhke0kuv.qbox.me/4e7ea79ba9fa8ad286e1.gif)
 安装依赖
->```
+
+```
 npm install vuedraggable --save
 ```
 
