@@ -172,7 +172,7 @@ npm install vuedraggable --save
 
 ## 我的简历
 
-(感兴趣请点我)[http://xurenjie.cn:3000/resume/xurenjie_resume.html]
+[感兴趣请点我](http://xurenjie.cn:3000/resume/xurenjie_resume.html)
 
 
 
