@@ -162,10 +162,12 @@ npm install vuedraggable --save
 
 
 ```
-> npm install
+ npm install
+```
 
-> npm run dev
-
+```
+ npm run dev
+ 
 ```
 
 
