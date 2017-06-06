@@ -293,8 +293,8 @@ export default {
 
 ```
 
-### 做个小广告
-### 👉 小前端求实习：[我的简历](http://xurenjie.cn:3000/resume/xurenjie_resume.html)
+###  做个小广告
+###  👉 小前端求实习：[我的简历](http://xurenjie.cn:3000/resume/xurenjie_resume.html)
 
 
 
