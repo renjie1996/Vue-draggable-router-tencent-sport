@@ -1,14 +1,11 @@
 # Vue2.0全家桶仿腾讯体育APP
 >一年一度的NBA总决赛，相信球迷用的最多的就是腾讯体育这款APP，刚好上手Vue，当练手就把这个APP仿下来。
 
-![](https://dn-mhke0kuv.qbox.me/4e7ea79ba9fa8ad286e1.gif)
 ## 效果预览
 
 >### 👉在线预览：[点我！！！在线预览，手机浏览或切换浏览器移动调试](http://xurenjie.cn:3000/vue-tencent-sports/index.html)
 
 >### 👉源码地址：[Github](https://github.com/renjie1996/tencent-sports)✨✨求你的小星星～
-
-![](https://dn-mhke0kuv.qbox.me/cfe5be12a6941859d059.gif)
 
 # 描述
 前端部分
@@ -162,6 +159,8 @@ npm install vuedraggable --save
 * Action 可以包含任意异步操作。
 
 
+## 使用
+
 ```
  npm install
 ```
@@ -170,6 +169,10 @@ npm install vuedraggable --save
  npm run dev
  
 ```
+
+## 我的简历
+
+(感兴趣请点我)[http://xurenjie.cn:3000/resume/xurenjie_resume.html]
 
 
 
